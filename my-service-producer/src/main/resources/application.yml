@@ -1,0 +1,10 @@
+server:
+  port: 8880
+spring:
+  application:
+    name: service-producer-user
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://server1.com:8001/eureka/
+#      defaultZone: http://admin:admin123@server1.com:8001/eureka/,http://admin:admin123@server2.com:8002/eureka/,http://admin:admin123@server3.com:8003/eureka/

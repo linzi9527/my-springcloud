@@ -1,0 +1,32 @@
+server:
+  port: 6888
+  undertow:
+    direct-buffers: true
+    io-threads: 4
+    worker-threads: 160
+spring:
+  application:
+    name: service-stream-consumer
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          zk-nodes: localhost:2181
+          auto-create-topics: true
+
+      bindings:
+        #input是接收，注意这里不能再像前面一样写output了
+        #input:
+        example-topic:
+          destination: topic-test  #监听kafka的topic
+            #消息发送的格式，接收端不用指定格式，但是发送端要
+          content-type: application/json  #text/plain
+          #只要把这些应用放置于同一个 “group” 中，就能够保证消息只会被其中一个应用消费一次
+          group: g2               #分组的组名,属于同一组的实例，一般由第一个启动的实例接收处理数据，第一个实例宕机，自动由第二个实例接收处理数据
+
+#同一个topic下多个消费者应用使用group，组名可以不同并且多个，但是消费数据只会被其中某一个消费者应用消费一次
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://server1.com:8001/eureka/

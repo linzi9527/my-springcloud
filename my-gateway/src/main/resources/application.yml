@@ -1,0 +1,40 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: gateway-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1.com:8001/eureka/
+#      defaultZone: http://admin:admin123@server1.com:8001/eureka/,http://admin:admin123@server2.com:8002/eureka/,http://admin:admin123@server3.com:8003/eureka/
+
+zuul:
+  prefix: /api
+  routes:
+    api-a:
+      path: /pro/**
+      serviceId: service-producer #service-ribbon
+      stripPrefix: true  #\u4E3Atrue /api/pro/\u4F1A\u88AB\u81EA\u52A8\u53BB\u6389\u8F6C\u53D1\u81F3/**\u7684\u65B9\u6CD5
+    api-b:
+      path: /order/**
+      serviceId: service-order    #service-feign
+      stripPrefix: true
+    api-c:
+      path: /local/**
+      url: http://localhost
+      stripPrefix: false
+    api-d:
+      path: /baidu/**
+      url: http://www.baidu.com
+      stripPrefix: false
+info:
+  app:
+    name: app-my-springcloud
+  company:
+    name: www.linzi.com
+
+logging:
+  level:
+    com.netflix: DEBUG
+

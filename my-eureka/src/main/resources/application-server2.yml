@@ -1,0 +1,19 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: Euraka-Node2
+  profiles:
+    active: server2
+  security:
+    user:
+      name: admin
+      password: admin123
+eureka:
+  instance:
+    hostname: server2.com
+  client:
+    service-url:
+      defaultZone: http://admin:admin123@server1.com:8001/eureka/,http://admin:admin123@server3.com:8003/eureka/
+    fetch-registry: false
+    register-with-eureka: false

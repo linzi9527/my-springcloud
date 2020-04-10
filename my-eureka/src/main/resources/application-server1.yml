@@ -1,0 +1,20 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: Eureka-Node1
+  profiles:
+    active: server1
+#  security:
+#    user:
+#      name: admin
+#      password: admin123
+eureka:
+  instance:
+    hostname: server1.com
+  client:
+    service-url:
+      defaultZone: http://server1.com:8001/eureka/
+#      defaultZone: http://admin:admin123@server2.com:8002/euraka/,http://admin:admin123@server3.com:8003/euraka/
+    fetch-registry: false  #是否抓取注册信息
+    register-with-eureka: false  #是否将自身注册到eureka

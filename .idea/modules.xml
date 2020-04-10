@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/my-eureka/my-eureka.iml" filepath="$PROJECT_DIR$/my-eureka/my-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-gateway/my-gateway.iml" filepath="$PROJECT_DIR$/my-gateway/my-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-message/my-message.iml" filepath="$PROJECT_DIR$/my-message/my-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-service/my-service.iml" filepath="$PROJECT_DIR$/my-service/my-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-service-producer/my-service-producer.iml" filepath="$PROJECT_DIR$/my-service-producer/my-service-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-springcloud.iml" filepath="$PROJECT_DIR$/my-springcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-message/my-stream-consumer/my-stream-consumer.iml" filepath="$PROJECT_DIR$/my-message/my-stream-consumer/my-stream-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-message/my-stream-provider/my-stream-provider.iml" filepath="$PROJECT_DIR$/my-message/my-stream-provider/my-stream-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-service/service-order/service-order.iml" filepath="$PROJECT_DIR$/my-service/service-order/service-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-service/service-producer/service-producer.iml" filepath="$PROJECT_DIR$/my-service/service-producer/service-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-service/service-user/service-user.iml" filepath="$PROJECT_DIR$/my-service/service-user/service-user.iml" />
+    </modules>
+  </component>
+</project>

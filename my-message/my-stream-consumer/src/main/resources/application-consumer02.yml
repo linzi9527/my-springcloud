@@ -1,0 +1,30 @@
+server:
+  port: 6886
+  undertow:
+    direct-buffers: true
+    io-threads: 4
+    worker-threads: 160
+spring:
+  application:
+    name: service-stream-consumer
+  cloud:
+    stream:
+      kafka:
+        binder:
+          auto-create-topics: true
+          brokers: localhost:9092
+          zk-nodes: localhost:2181
+        bindings:
+          #input\u662F\u63A5\u6536\uFF0C\u6CE8\u610F\u8FD9\u91CC\u4E0D\u80FD\u518D\u50CF\u524D\u9762\u4E00\u6837\u5199output\u4E86
+          #input:
+          example-topic:
+            destination: topic-test
+            content-type: application/json #text/plain
+            #\u53EA\u8981\u628A\u8FD9\u4E9B\u5E94\u7528\u653E\u7F6E\u4E8E\u540C\u4E00\u4E2A \u201Cgroup\u201D \u4E2D\uFF0C\u5C31\u80FD\u591F\u4FDD\u8BC1\u6D88\u606F\u53EA\u4F1A\u88AB\u5176\u4E2D\u4E00\u4E2A\u5E94\u7528\u6D88\u8D39\u4E00\u6B21
+            group: g2             #\u5206\u7EC4\u7684\u7EC4\u540D,\u5C5E\u4E8E\u540C\u4E00\u7EC4\u7684\u5B9E\u4F8B\uFF0C\u4E00\u822C\u7531\u7B2C\u4E00\u4E2A\u542F\u52A8\u7684\u5B9E\u4F8B\u63A5\u6536\u5904\u7406\u6570\u636E\uFF0C\u7B2C\u4E00\u4E2A\u5B9E\u4F8B\u5B95\u673A\uFF0C\u81EA\u52A8\u7531\u7B2C\u4E8C\u4E2A\u5B9E\u4F8B\u63A5\u6536\u5904\u7406\u6570\u636E
+
+#\u540C\u4E00\u4E2Atopic\u4E0B\u591A\u4E2A\u6D88\u8D39\u8005\u5E94\u7528\u4F7F\u7528group\uFF0C\u7EC4\u540D\u53EF\u4EE5\u4E0D\u540C\u5E76\u4E14\u591A\u4E2A\uFF0C\u4F46\u662F\u6D88\u8D39\u6570\u636E\u53EA\u4F1A\u88AB\u5176\u4E2D\u67D0\u4E00\u4E2A\u6D88\u8D39\u8005\u5E94\u7528\u6D88\u8D39\u4E00\u6B21
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://server1.com:8001/eureka/
